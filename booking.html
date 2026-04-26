@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Tiket - Cinema XXI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar (sama seperti index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-film"></i> CINEMA XXI
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Now Showing</a></li>
+                <li><a href="cinemas.html" class="nav-link active">Bioskop</a></li>
+                <li><a href="my-tickets.html" class="nav-link"><i class="fas fa-ticket-alt"></i> Tiket Saya</a></li>
+                <li><button class="login-btn">Login</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="booking-container">
+        <div class="container">
+            <!-- Movie & Showtime Info -->
+            <div class="booking-header">
+                <div class="movie-info">
+                    <img id="moviePoster" src="" alt="" class="movie-poster-small">
+                    <div>
+                        <h1 id="movieTitle">Film Terpilih</h1>
+                        <div class="showtime-info">
+                            <span id="cinemaName">Cinema XXI Mall</span>
+                            <span id="showDate">Sabtu, 15 Feb 2024</span>
+                            <span id="showTime">19:00 WIB</span>
+                            <span id="screenType">Screen 3 (2D)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-content">
+                <!-- Seat Selection -->
+                <div class="seat-section">
+                    <h2>Pilih Kursi</h2>
+                    <div class="screen-view">
+                        <div class="screen"></div>
+                    </div>
+                    <div class="seats-container" id="seatsContainer">
+                        <!-- Kursi akan dimuat oleh JS -->
+                    </div>
+                    <div class="seat-legend">
+                        <div class="seat-legend-item">
+                            <div class="seat available"></div>
+                            <span>Tersedia</span>
+                        </div>
+                        <div class="seat-legend-item">
+                            <div class="seat selected"></div>
+                            <span>Terpilih</span>
+                        </div>
+                        <div class="seat-legend-item">
+                            <div class="seat taken"></div>
+                            <span>Taken</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary & Payment -->
+                <div class="summary-section">
+                    <h2>Ringkasan</h2>
+                    <div class="selected-seats" id="selectedSeatsList">
+                        <p>Pilih kursi untuk melanjutkan</p>
+                    </div>
+                    <div class="price-breakdown">
+                        <div class="price-row">
+                            <span>Tiket x <span id="ticketCount">0</span></span>
+                            <span id="ticketPrice">Rp 0</span>
+                        </div>
+                        <div class="price-row total">
+                            <span>Total</span>
+                            <span id="totalAmount">Rp 0</span>
+                        </div>
+                    </div>
+                    <button class="pay-btn" id="payBtn" disabled>
+                        <i class="fas fa-credit-card"></i>
+                        Bayar Sekarang
+                    </button>
+                    <div class="qr-code-section" id="qrSection" style="display: none;">
+                        <h3>Booking Berhasil!</h3>
+                        <div id="qrCode"></div>
+                        <p id="bookingCode"></p>
+                        <button class="print-btn" onclick="printTicket()">Cetak Tiket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/booking.js"></script>
+</body>
+</html>
